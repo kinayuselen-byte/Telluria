@@ -160,6 +160,8 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      sortFn: "(a, b) => { const order = ['Lore Telluria', 'Armes', 'Armures', 'Sorts Occultistes', 'Bestiaire']; const ia = order.indexOf(a.displayName); const ib = order.indexOf(b.displayName); return (ia === -1 ? order.length : ia) - (ib === -1 ? order.length : ib); }"
     layout:
       position: left
       priority: 50

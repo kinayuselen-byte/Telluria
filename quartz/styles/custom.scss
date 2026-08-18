@@ -11,8 +11,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.center > article,
-.sidebar {
+%parchment-panel {
   --dark: #2b2015;
   --darkgray: #3a2c1d;
   --gray: #6b5a44;
@@ -29,9 +28,31 @@ body {
   padding: 1.5rem 2rem;
 }
 
+.sidebar {
+  @extend %parchment-panel;
+}
+
+// The homepage's article has no parchment: its content moved to the left nav
+body:not([data-slug="index"]) .center > article {
+  @extend %parchment-panel;
+}
+
 @media (max-width: 800px) {
-  .center > article,
-  .sidebar {
+  .sidebar,
+  body:not([data-slug="index"]) .center > article {
     padding: 1rem 1.25rem;
   }
+}
+
+// Remove the right-hand sidebar column entirely
+.sidebar.right {
+  display: none;
+}
+
+#quartz-body {
+  grid-template-columns: #{$sidePanelWidth} auto;
+  grid-template-areas:
+    "grid-sidebar-left grid-header"
+    "grid-sidebar-left grid-center"
+    "grid-sidebar-left grid-footer";
 }

@@ -56,3 +56,12 @@ body:not([data-slug="index"]) .center > article {
     "grid-sidebar-left grid-center"
     "grid-sidebar-left grid-footer";
 }
+
+// Green nav links for these specific Métiers pages
+.explorer-content a[href*="voleur"],
+.explorer-content a[href*="assassin"],
+.explorer-content a[href*="grimpeur"],
+.explorer-content a[href*="archer"],
+.explorer-content a[href*="mercenaire"] {
+  color: #2f7d4f;
+}

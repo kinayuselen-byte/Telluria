@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: Telluria.github.io/mon-JDR
+  baseUrl: kinayuselen-byte.github.io/Telluria
   ignorePatterns:
     - private
     - templates

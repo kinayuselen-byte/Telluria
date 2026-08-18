@@ -10,3 +10,28 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
+.center > article,
+.sidebar {
+  --dark: #2b2015;
+  --darkgray: #3a2c1d;
+  --gray: #6b5a44;
+  --lightgray: rgba(90, 70, 45, 0.3);
+  --secondary: #7a4a1f;
+  --tertiary: #9c6b2e;
+  --highlight: rgba(122, 74, 31, 0.12);
+
+  background-image: url("static/parchment.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 2rem;
+}
+
+@media (max-width: 800px) {
+  .center > article,
+  .sidebar {
+    padding: 1rem 1.25rem;
+  }
+}

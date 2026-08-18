@@ -2,4 +2,4 @@ Ces combattants privilégient la vitesse à la puissance. Souvent engagés comme
 
 Réactif et audacieux. Il mise sur sa vitesse plutôt que sur sa force brute. Toujours prêt à intervenir, il protège ses alliés sans perdre une seconde.
 
-![[Character Profile Student Creation Poster in Beige Bold Illustrative Style (6).jpg]]
+![[Character Profile Student Creation Poster in Beige Bold Illustrative Style (15).jpg|498]]

@@ -3,4 +3,4 @@ Les voleurs ne vivent pas seulement des bourses qu'ils dérobent. Dans les profo
 
 Prudent, opportuniste et toujours sur ses gardes. Il observe avant d'agir et préfère éviter les affrontements inutiles. Son instinct lui permet de repérer les objets de valeur comme les pièges oubliés.
 
-![[Character Profile Student Creation Poster in Beige Bold Illustrative Style (1).jpg]]
+![[Character Profile Student Creation Poster in Beige Bold Illustrative Style (11).jpg|508]]

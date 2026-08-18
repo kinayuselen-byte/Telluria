@@ -57,11 +57,44 @@ body:not([data-slug="index"]) .center > article {
     "grid-sidebar-left grid-footer";
 }
 
-// Green nav links for these specific Métiers pages
+// Métiers nav links, color-coded by category
+// (mercenaire arme légère = green, mercenaire arme lourde = red — kept distinct on purpose)
 .explorer-content a[href*="voleur"],
 .explorer-content a[href*="assassin"],
 .explorer-content a[href*="grimpeur"],
 .explorer-content a[href*="archer"],
-.explorer-content a[href*="mercenaire"] {
+.explorer-content a[href*="mercenaire"]:not([href*="lourde"]) {
   color: #2f7d4f;
+}
+
+.explorer-content a[href*="forgeron"],
+.explorer-content a[href*="mineur"],
+.explorer-content a[href*="gardien"],
+.explorer-content a[href*="artificier"],
+.explorer-content a[href*="ancre"],
+.explorer-content a[href*="lourde"] {
+  color: #b23a2e;
+}
+
+.explorer-content a[href*="médecin"],
+.explorer-content a[href*="decin"],
+.explorer-content a[href*="historien"],
+.explorer-content a[href*="spéléologue"],
+.explorer-content a[href*="ologue"],
+.explorer-content a[href$="occultiste"] {
+  color: #2f6690;
+}
+
+.explorer-content a[href*="guide"] {
+  color: #b592d6;
+}
+
+.explorer-content a[href*="ménestrel"],
+.explorer-content a[href*="nestrel"],
+.explorer-content a[href*="négociateur"],
+.explorer-content a[href*="gociateur"],
+.explorer-content a[href*="aumônier"],
+.explorer-content a[href*="aumonier"],
+.explorer-content a[href*="diplomate"] {
+  color: #7a4fa3;
 }

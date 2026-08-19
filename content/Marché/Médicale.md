@@ -1,5 +1,4 @@
 
-
 | Bandage | 1 éclat de spélu | Bande de tissu propre permettant de stopper les saignements et protéger une blessure. Rend 2PV |
 | ------- | ---------------- | ---------------------------------------------------------------------------------------------- |
 

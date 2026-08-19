@@ -1,5 +1,4 @@
 
-
 | Fiole vide             | 1 éclat de spélu | Petit récipient destiné aux potions ou aux prélèvements.           |
 | ---------------------- | ---------------- | ------------------------------------------------------------------ |
 

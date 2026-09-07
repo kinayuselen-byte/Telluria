@@ -3,4 +3,4 @@ Les vastes cavernes et les galeries immenses font des archers des alliés préci
 
 Patient et concentré. Il préfère analyser une situation avant de décocher une flèche. Son regard perçant remarque les détails que beaucoup ignorent.
 
-![[Character Profile Student Creation Poster in Beige Bold Illustrative Style (14).jpg|532]]
+![[Character Profile Student Creation Poster in Beige Bold Illustrative Style (33).jpg|533]]

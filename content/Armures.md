@@ -1,5 +1,5 @@
 
-**Agilité : 
+**Agilité :**
 
 1. Cuir souple : Vêtements ajustés en cuir traité, silencieux et légers. 
 
@@ -11,7 +11,7 @@
 
   
 
-**Force : 
+**Force :**
 
 1. Gambison : Veste matelassée épaisse, solide contre les lames légères. 
 
@@ -24,7 +24,7 @@
   
   
 
-**Social : 
+**Social :**
 
 1. Habits fins : Vêtements de belle facture, propres, imposant une certaine prestance. 
 
@@ -36,7 +36,7 @@
 
 
 
-**Savoir : 
+**Savoir :**
 
 1. Tablier artisan : Robuste, avec de multiples poches pour outils et parchemins. 
 

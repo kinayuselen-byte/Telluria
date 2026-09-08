@@ -827,6 +827,7 @@
 
           <div>
             <div class="sec-label">Attributs</div>
+            <div class="alloc-counter" id="attr-counter" style="font-size:13px; color:var(--ink-soft); margin-bottom:6px;"></div>
             <div class="attr-grid" id="attr-grid"></div>
 
             <div class="sec-label" style="margin-top:18px;">Événements</div>
@@ -839,6 +840,7 @@
       <!-- ============ TAB: COMPETENCES ============ -->
       <div class="tab-panel" id="tab-competences">
         <div class="sec-label">Compétences</div>
+        <div class="alloc-counter" id="comp-counter" style="font-size:13px; color:var(--ink-soft); margin-bottom:6px;"></div>
         <div class="comp-groups" id="comp-groups"></div>
       </div>
 
@@ -965,6 +967,65 @@ const compGroups = document.getElementById('comp-groups');
 
 function checkedCount(pips){ return (pips||[]).filter(Boolean).length; }
 
+// ---------------- niveau (calculé depuis l'experience) ----------------
+const XP_PALIERS = [0, 100, 250, 450, 700, 1000, 1350, 1750, 2250, 2850];
+function computeNiveau(xp){
+  let niveau = 1;
+  for(let i=0;i<XP_PALIERS.length;i++){
+    if(xp >= XP_PALIERS[i]) niveau = i+1;
+  }
+  return niveau;
+}
+function updateNiveau(){
+  const xp = parseInt(document.getElementById('experience').value, 10) || 0;
+  const niveauEl = document.getElementById('niveau-value');
+  if(niveauEl) niveauEl.textContent = computeNiveau(xp);
+  updateAllocCounters();
+}
+
+// ---------------- allocation attributs / competences selon le niveau ----------------
+const NIVEAU_ALLOC = {
+  1: {attributs: 3, competences: 5},
+  2: {attributs: 4, competences: 7},
+  3: {attributs: 5, competences: 9},
+  4: {attributs: 6, competences: 12},
+  5: {attributs: 7, competences: 14},
+  6: {attributs: 8, competences: 16},
+  7: {attributs: 9, competences: 19},
+  8: {attributs: 10, competences: 21},
+  9: {attributs: 11, competences: 23},
+  10: {attributs: 12, competences: 26},
+};
+function getNiveauActuel(){
+  const xp = parseInt(document.getElementById('experience').value, 10) || 0;
+  return computeNiveau(xp);
+}
+function getCompetenceCap(niveau){
+  if(niveau >= 10) return 16;
+  if(niveau >= 7) return 15;
+  return 14;
+}
+function countAttrPipsUsed(){
+  return attributs.reduce((sum,a)=>sum+checkedCount(a.pips), 0);
+}
+function countCompPipsUsed(){
+  let sum = 0;
+  Object.values(competences).forEach(list=>{
+    list.forEach(c=>{ sum += checkedCount(c.pips); });
+  });
+  return sum;
+}
+function updateAllocCounters(){
+  const niveau = getNiveauActuel();
+  const alloc = NIVEAU_ALLOC[niveau] || NIVEAU_ALLOC[10];
+  const usedAttr = countAttrPipsUsed();
+  const usedComp = countCompPipsUsed();
+  const attrEl = document.getElementById('attr-counter');
+  const compEl = document.getElementById('comp-counter');
+  if(attrEl) attrEl.textContent = `Attributs : ${usedAttr} / ${alloc.attributs} utilisés (${Math.max(0, alloc.attributs - usedAttr)} restants)`;
+  if(compEl) compEl.textContent = `Compétences : ${usedComp} / ${alloc.competences} utilisés (${Math.max(0, alloc.competences - usedComp)} restants) — plafond par compétence : ${getCompetenceCap(niveau)}`;
+}
+
 function renderAttributsEtCompetences(){
   attrGrid.innerHTML = '';
   compGroups.innerHTML = '';
@@ -1013,7 +1074,29 @@ function renderAttributsEtCompetences(){
   document.querySelectorAll('#attr-grid .mini-pip').forEach(p=>{
     p.addEventListener('click', ()=>{
       const a = attributs.find(x=>x.key===p.dataset.attr);
-      a.pips[parseInt(p.dataset.idx)] = !a.pips[parseInt(p.dataset.idx)];
+      const idx = parseInt(p.dataset.idx);
+      const turningOn = !a.pips[idx];
+
+      if(turningOn){
+        const niveau = getNiveauActuel();
+        const alloc = NIVEAU_ALLOC[niveau] || NIVEAU_ALLOC[10];
+        if(countAttrPipsUsed() >= alloc.attributs){
+          showStatus('Plus de points d\'attribut disponibles à ce niveau');
+          return;
+        }
+        const cap = getCompetenceCap(niveau);
+        const futureAttrBonus = checkedCount(a.pips) + 1;
+        const wouldExceed = (competences[a.key]||[]).some(c=>{
+          const total = (parseFloat(c.val)||0) + checkedCount(c.pips) + futureAttrBonus;
+          return total > cap;
+        });
+        if(wouldExceed){
+          showStatus(`Plafond de compétence (${cap}) atteint pour ce groupe`);
+          return;
+        }
+      }
+
+      a.pips[idx] = turningOn;
       renderAttributsEtCompetences();
     });
   });
@@ -1022,7 +1105,26 @@ function renderAttributsEtCompetences(){
   document.querySelectorAll('#comp-groups .comp-pips .mini-pip').forEach(p=>{
     p.addEventListener('click', ()=>{
       const c = competences[p.dataset.attr][parseInt(p.dataset.comp)];
-      c.pips[parseInt(p.dataset.idx)] = !c.pips[parseInt(p.dataset.idx)];
+      const a = attributs.find(x=>x.key===p.dataset.attr);
+      const idx = parseInt(p.dataset.idx);
+      const turningOn = !c.pips[idx];
+
+      if(turningOn){
+        const niveau = getNiveauActuel();
+        const alloc = NIVEAU_ALLOC[niveau] || NIVEAU_ALLOC[10];
+        if(countCompPipsUsed() >= alloc.competences){
+          showStatus('Plus de points de compétence disponibles à ce niveau');
+          return;
+        }
+        const cap = getCompetenceCap(niveau);
+        const total = (parseFloat(c.val)||0) + checkedCount(c.pips) + 1 + checkedCount(a.pips);
+        if(total > cap){
+          showStatus(`Plafond de compétence (${cap}) atteint`);
+          return;
+        }
+      }
+
+      c.pips[idx] = turningOn;
       renderAttributsEtCompetences();
     });
   });
@@ -1039,6 +1141,8 @@ function renderAttributsEtCompetences(){
       badge.classList.toggle('boosted', (checkedCount(c.pips)+checkedCount(a.pips))>0);
     });
   });
+
+  updateAllocCounters();
 }
 renderAttributsEtCompetences();
 
@@ -1601,20 +1705,6 @@ function loadFromLocalStorage(){
 document.addEventListener('input', saveState);
 document.addEventListener('change', saveState);
 
-// ---------------- niveau (calculé depuis l'experience) ----------------
-const XP_PALIERS = [0, 100, 250, 450, 700, 1000, 1350, 1750, 2250, 2850];
-function computeNiveau(xp){
-  let niveau = 1;
-  for(let i=0;i<XP_PALIERS.length;i++){
-    if(xp >= XP_PALIERS[i]) niveau = i+1;
-  }
-  return niveau;
-}
-function updateNiveau(){
-  const xp = parseInt(document.getElementById('experience').value, 10) || 0;
-  const niveauEl = document.getElementById('niveau-value');
-  if(niveauEl) niveauEl.textContent = computeNiveau(xp);
-}
 document.getElementById('experience').addEventListener('input', updateNiveau);
 
 // Restaure automatiquement la dernière sauvegarde de ce navigateur au chargement de la page

@@ -346,10 +346,10 @@
   }
   .attr-top{ display:flex; justify-content:space-between; align-items:center; }
   .attr-name{ font-family:'Cinzel',serif; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
+  .attr-name.tier-avantage{ color:#3E9B4F; }
+  .attr-name.tier-neutre{ color:#D9A521; }
+  .attr-name.tier-desavantage{ color:#C1443A; }
   .attr-val{ font-family:'Cinzel Decorative',serif; font-size:22px; color:var(--blood); }
-  .attr-val.tier-avantage{ color:#3E9B4F; }
-  .attr-val.tier-neutre{ color:#D9A521; }
-  .attr-val.tier-desavantage{ color:#C1443A; }
   .mini-pips{ display:flex; gap:5px; margin-top:6px; }
   .mini-pip{ width:13px; height:13px; border:1.5px solid var(--ink-soft); border-radius:2px; cursor:pointer; background:#ffffff30;}
   .mini-pip.checked{ background:var(--gold); border-color:var(--gold-bright); box-shadow:0 0 4px var(--gold-bright); }
@@ -1041,8 +1041,8 @@ function renderAttributsEtCompetences(){
     card.className = 'attr-card';
     card.innerHTML = `
       <div class="attr-top">
-        <div class="attr-name-wrap"><img class="attr-logo" src="${logos[a.key]}" alt="${a.name}"><div class="attr-name">${a.name}</div></div>
-        <div class="attr-val ${tier}">${total}</div>
+        <div class="attr-name-wrap"><img class="attr-logo" src="${logos[a.key]}" alt="${a.name}"><div class="attr-name ${tier}">${a.name}</div></div>
+        <div class="attr-val">${total}</div>
       </div>
       <div class="mini-pips">
         ${[0,1,2,3].map(i=>`<div class="mini-pip ${a.pips[i]?'checked':''}" data-kind="attr" data-attr="${a.key}" data-idx="${i}"></div>`).join('')}

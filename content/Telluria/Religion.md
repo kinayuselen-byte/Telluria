@@ -1,4 +1,3 @@
-
 En 1326, la religion officielle, exclusive et omniprésente en France st le **catholicisme romain**. A cette époque du Bas Moyen-Age, la société française est profondément théocentrique et l'Eglise catholique structure l'intégralité de la vie politique, sociale et quotidienne
 
 Le paysage religieux en 1326 est marqué par plusieurs éléments clés : 

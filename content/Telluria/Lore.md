@@ -1,4 +1,3 @@
-
 L'an 1326 marque une époque troublée pour le Royaume de France.
 
 Les grandes cités prospèrent derrière leurs murailles de pierre, les cathédrales s'élèvent vers le ciel et les seigneurs règnent sur leurs terres. Pourtant, loin du regard des rois et des nobles, un autre monde existe sous les pieds des hommes.

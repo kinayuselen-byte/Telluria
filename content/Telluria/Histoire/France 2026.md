@@ -1,4 +1,4 @@
-
+![[Pasted image 20260910223132.png]]
 # **1. Gouvernement :**
 
 En 1326, le roi est **Charles IV le Bel**, dernier fils de Philippe IV le Bel. La France est déjà une monarchie relativement puissante, mais elle est encore très différente de l'État centralisé des siècles suivants.

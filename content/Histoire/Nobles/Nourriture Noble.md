@@ -1,4 +1,6 @@
 
+![[Pasted image 20260913201732.png]]
+
 Dans une grande maison aristocratique, on peut trouver :
 
 - bœuf

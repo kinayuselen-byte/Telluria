@@ -1,3 +1,5 @@
+![[Pasted image 20260913203623.png]]
+![[Pasted image 20260913203536.png]]
 
 Entre nobles et paysans existe tout un monde urbain.
 

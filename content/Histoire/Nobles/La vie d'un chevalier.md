@@ -1,4 +1,6 @@
 
+![[Pasted image 20260913203448.png]]
+
 Un chevalier peut passer beaucoup de temps à :
 
 - s'entraîner

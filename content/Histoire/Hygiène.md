@@ -1,3 +1,5 @@
+![[Pasted image 20260913204003.png]]
+![[Pasted image 20260913203612.png]]
 
 Encore un cliché à éviter : « Les gens du Moyen Âge ne se lavaient jamais. »
 

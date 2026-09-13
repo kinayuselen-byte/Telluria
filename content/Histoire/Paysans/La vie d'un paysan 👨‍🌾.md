@@ -1,3 +1,7 @@
+
+
+
+
 La majorité de la population vit de l'agriculture. Un paysan peut posséder ou exploiter :
 - une petite maison
 - quelques parcelles

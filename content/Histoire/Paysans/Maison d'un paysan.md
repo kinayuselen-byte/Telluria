@@ -1,4 +1,6 @@
 
+![[Pasted image 20260913201534.png|557]]![[Pasted image 20260913201645.png|557]]
+
 Une petite maison peut être extrêmement simple.
 
 Souvent :

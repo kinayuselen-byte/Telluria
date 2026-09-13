@@ -1,4 +1,6 @@
 
+![[Pasted image 20260913204026.png]]
+
 ⚠️ La peste noire n'est PAS encore arrivée. La grande peste commence en Europe à partir de **1347-1348**. 
 Donc en **1326**, tu ne dois pas avoir de personnages parlant de « peste noire » comme d'une catastrophe déjà connue. La peste frappera Marseille en 1348 avant de se diffuser largement.
 

@@ -1,5 +1,5 @@
-![[Pasted image 20260913203623.png]]
-![[Pasted image 20260913203536.png]]
+![[Pasted image 20260913203623.png|411]]
+
 
 Entre nobles et paysans existe tout un monde urbain.
 
@@ -15,6 +15,8 @@ Entre nobles et paysans existe tout un monde urbain.
 - maçons
 - armuriers
 - potiers
+
+![[Pasted image 20260913203536.png|409]]
 
  💰 Marchands
 

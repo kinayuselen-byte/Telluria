@@ -1,5 +1,5 @@
 
-![[Pasted image 20260913201805.png]]
+![[Pasted image 20260913201805.png|367]]
 
 ### 🌅 Aube
 

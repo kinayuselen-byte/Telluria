@@ -1,5 +1,5 @@
 
-![[Pasted image 20260913201534.png|557]]![[Pasted image 20260913201645.png|557]]
+![[Pasted image 20260913201534.png|408]]
 
 Une petite maison peut être extrêmement simple.
 
@@ -15,7 +15,9 @@ Souvent :
 - tuiles dans certaines régions
 - lauzes dans certaines zones
 
-À l'intérieur :
+**À l'intérieur :**
+
+![[Pasted image 20260913201645.png|409]]
 
 🔥 foyer  
 🪵 bancs  

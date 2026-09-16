@@ -1,5 +1,5 @@
 
-![[Pasted image 20260913201713.png]]
+![[Pasted image 20260913201713.png|373]]
 
 
 Le pain est fondamental dans l'alimentation médiévale. Il est accompagné notamment de légumes, de produits laitiers, de viande selon les moyens, et de boissons comme le vin ou la bière selon les régions.

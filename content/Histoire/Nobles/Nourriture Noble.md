@@ -1,5 +1,5 @@
 
-![[Pasted image 20260913201732.png]]
+![[Pasted image 20260913201732.png|430]]
 
 Dans une grande maison aristocratique, on peut trouver :
 
